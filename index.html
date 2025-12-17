@@ -20,8 +20,9 @@ body, html {
   left: 0;
   width: 200px;
   height: 100%;
-  background-color: #2b2b2b;
+  background-color: rgba(43, 43, 43, 0.9);
   padding-top: 20px;
+  z-index: 1000;
 }
 
 .sidebar ul {
@@ -61,6 +62,11 @@ body, html {
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
+  color: #fff;
+  background-size: cover;          /* 背景画像を画面いっぱいに */
+  background-position: center;     /* 背景中央に配置 */
+  background-repeat: no-repeat;    /* 繰り返さない */
+  text-shadow: 1px 1px 4px #000;   /* 文字を見やすく */
 }
 
 /* アクティブページ */
@@ -69,13 +75,12 @@ body, html {
   transform: translateY(0);
 }
 
-/* ページ色 */
-#page1 { background-color: #1e1e1e; color: #fff; }
-#page2 { background-color: #292929; color: #fff; }
-#page3 { background-color: #1f1f1f; color: #fff; }
-#page4 { background-color: #2a2a2a; color: #fff; }
-#page5 { background-color: #212121; color: #fff; }
-#page6 { background-color: #262626; color: #fff; }
+/* ===== ページごとの背景画像 ===== */
+#page1 { background-image: url('fa4f794c-3eb1-459a-96eb-7cdda640e68c.png'); }
+#page2 { background-image: url('d3d266ff-8adb-4eb2-b17c-2734483b5e6f.png'); }
+#page3 { background-image: url('20251217_22_58_03.png'); }
+#page5 { background-image: url('0c318009-1c33-4711-81dd-e62066054a03.png'); }
+#page6 { background-image: url('a347463e-6593-4fca-94dc-c3e02c3a09de.png'); }
 
 h1 { margin-bottom: 20px; }
 p { max-width: 600px; line-height: 1.5; }
@@ -99,7 +104,7 @@ p { max-width: 600px; line-height: 1.5; }
 <div class="content">
   <section id="page1" class="page">
     <h1>サーバー紹介</h1>
-    <p>当サーバー「YamoServerWeb」は、初心者から上級者まで楽しめるMinecraftサーバーです。サバイバル、ミニゲーム、アスレチックなど様々なコンテンツを用意しています。</p>
+    <p>当サーバー「YamoServer」は、初心者から上級者まで楽しめるMinecraftサーバーです。サバイバル、ミニゲーム、アスレチックなど様々なコンテンツを用意しています。</p>
   </section>
 
   <section id="page2" class="page">
@@ -161,3 +166,4 @@ activatePage();
 
 </body>
 </html>
+
