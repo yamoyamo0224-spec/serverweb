@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minecraftサーバー紹介サイト</title>
+<title>YamoServerWeb サーバー紹介</title>
 <style>
 /* ===== 全体 ===== */
 body, html {
@@ -51,12 +51,16 @@ body, html {
 .page {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   transition: opacity 0.8s, transform 0.8s;
   opacity: 0;
   transform: translateY(50px);
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 /* アクティブページ */
@@ -72,6 +76,9 @@ body, html {
 #page4 { background-color: #2a2a2a; color: #fff; }
 #page5 { background-color: #212121; color: #fff; }
 #page6 { background-color: #262626; color: #fff; }
+
+h1 { margin-bottom: 20px; }
+p { max-width: 600px; line-height: 1.5; }
 </style>
 </head>
 <body>
@@ -90,12 +97,34 @@ body, html {
 
 <!-- 各ページ -->
 <div class="content">
-  <section id="page1" class="page">サーバー紹介コンテンツ</section>
-  <section id="page2" class="page">作成者紹介コンテンツ</section>
-  <section id="page3" class="page">Hub鯖コンテンツ</section>
-  <section id="page4" class="page">サバイバル鯖コンテンツ</section>
-  <section id="page5" class="page">KitPvP鯖コンテンツ</section>
-  <section id="page6" class="page">アスレ鯖コンテンツ</section>
+  <section id="page1" class="page">
+    <h1>サーバー紹介</h1>
+    <p>当サーバー「YamoServerWeb」は、初心者から上級者まで楽しめるMinecraftサーバーです。サバイバル、ミニゲーム、アスレチックなど様々なコンテンツを用意しています。</p>
+  </section>
+
+  <section id="page2" class="page">
+    <h1>作成者紹介</h1>
+    <p>サーバー管理者は「Yamo」、プレイヤーが楽しめるサーバー作りに情熱を注いでいます。</p>
+  </section>
+
+  <section id="page3" class="page">
+    <h1>Hub鯖</h1>
+    <p>Hubサーバーは全モードへの入り口です。ここから各ゲームモードに簡単に移動できます。フレンドと一緒に遊ぶのも簡単です。</p>
+  </section>
+
+  <section id="page4" class="page">
+    <h1>サバイバル鯖</h1>
+    <p>サバイバル鯖では、資源を集めて自分の拠点を作り、他プレイヤーと協力または競争できます。イベントやワールドボスも定期開催中。</p>
+  </section>
+
+  <section id="page5" class="page">
+    <h1>KitPvP鯖</h1>
+    <p>KitPvP鯖では戦闘に特化したプレイヤー同士の対戦が楽しめます。装備を選んで戦略を立て、ランキング上位を目指しましょう。</p>
+  </section>
+
+  <section id="page6" class="page">
+    <h1>アスレチック鯖では、ジャンプやパルクールのスキルを試すことができます。</p>
+  </section>
 </div>
 
 <script>
