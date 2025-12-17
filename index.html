@@ -4,37 +4,130 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Minecraftサーバー紹介サイト</title>
-<link rel="stylesheet" href="css/style.css">
+<style>
+/* ===== 全体 ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===== 左サイドバー固定 ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #2b2b2b;
+  padding-top: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+  color: #ffcc00;
+}
+
+/* ===== ページコンテンツ ===== */
+.content {
+  margin-left: 200px;
+}
+
+.page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: opacity 0.8s, transform 0.8s;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* アクティブページ */
+.page.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ページ色 */
+#page1 { background-color: #1e1e1e; color: #fff; }
+#page2 { background-color: #292929; color: #fff; }
+#page3 { background-color: #1f1f1f; color: #fff; }
+#page4 { background-color: #2a2a2a; color: #fff; }
+#page5 { background-color: #212121; color: #fff; }
+#page6 { background-color: #262626; color: #fff; }
+</style>
 </head>
 <body>
-<header>
-<h1>Minecraftサーバー紹介サイト</h1>
-</header>
 
-<main>
-<section class="server-list">
-<h2>おすすめサーバー一覧</h2>
+<!-- 左固定ナビ -->
+<nav class="sidebar">
+  <ul>
+    <li><a href="#page1">サーバー紹介</a></li>
+    <li><a href="#page2">作成者</a></li>
+    <li><a href="#page3">Hub鯖</a></li>
+    <li><a href="#page4">サバイバル鯖</a></li>
+    <li><a href="#page5">KitPvP鯖</a></li>
+    <li><a href="#page6">アスレ鯖</a></li>
+  </ul>
+</nav>
 
-<div class="server-card">
-<img src="images/server1.png" alt="サーバー1">
-<h3>サーバー名1</h3>
-<p>ジャンル: サバイバル</p>
-<p>IP: mc.example1.jp</p>
+<!-- 各ページ -->
+<div class="content">
+  <section id="page1" class="page">サーバー紹介コンテンツ</section>
+  <section id="page2" class="page">作成者紹介コンテンツ</section>
+  <section id="page3" class="page">Hub鯖コンテンツ</section>
+  <section id="page4" class="page">サバイバル鯖コンテンツ</section>
+  <section id="page5" class="page">KitPvP鯖コンテンツ</section>
+  <section id="page6" class="page">アスレ鯖コンテンツ</section>
 </div>
 
-<div class="server-card">
-<img src="images/server2.png" alt="サーバー2">
-<h3>サーバー名2</h3>
-<p>ジャンル: ミニゲーム</p>
-<p>IP: mc.example2.jp</p>
-</div>
+<script>
+// ===== スクロールでアクティブページ切り替え =====
+const pages = document.querySelectorAll('.page');
 
-</section>
-</main>
+function activatePage() {
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
 
-<footer>
-<p>&copy; 2025 MinecraftServerSite</p>
-</footer>
+  pages.forEach((page, index) => {
+    if (scrollPosition >= index * windowHeight - windowHeight / 2) {
+      page.classList.add('active');
+    } else {
+      page.classList.remove('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', activatePage);
+
+// ===== ナビリンククリックでスムーズスクロール =====
+document.querySelectorAll('.sidebar a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+  });
+});
+
+// 初回ロード時
+activatePage();
+</script>
 
 </body>
 </html>
